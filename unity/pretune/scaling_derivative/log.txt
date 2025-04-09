@@ -1,0 +1,694 @@
+
+=== Hardware Configuration ===
+Using device: cuda
+GPU: NVIDIA GeForce GTX 1080 Ti
+CUDA version: 11.8
+PyTorch version: 2.6.0+cu118
+Num CPUs: 24
+
+=== Training Parameters ===
+Timesteps: 300
+Base channels: 64
+Loss weights - Signal: 6, Peaks: 2
+Guidance scale: 1
+Peak mask weights: [1. 2.]
+Training 1D U-Net Diffusion Model with peak-weighted loss...
+
+Epoch 1/100
+Total loss: 26.2483
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 15.1619, Std: 3.7088
+Peak memory allocated: 0.09 GB
+
+Epoch 2/100
+Total loss: 14.4526
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 57.5548, Std: 77.1163
+Peak memory allocated: 0.09 GB
+
+Epoch 3/100
+Total loss: 5.1725
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 73.2632, Std: 60.0318
+Peak memory allocated: 0.09 GB
+
+Epoch 4/100
+Total loss: 4.4319
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 19.3175, Std: 11.5336
+Peak memory allocated: 0.09 GB
+
+Epoch 5/100
+Total loss: 4.2523
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 19.2643, Std: 9.6422
+Peak memory allocated: 0.09 GB
+
+Epoch 6/100
+Total loss: 4.2592
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 16.2154, Std: 10.3619
+Peak memory allocated: 0.09 GB
+
+Epoch 7/100
+Total loss: 4.1632
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 14.3927, Std: 7.1492
+Peak memory allocated: 0.09 GB
+
+Epoch 8/100
+Total loss: 4.1826
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 28.5317, Std: 17.5472
+Peak memory allocated: 0.09 GB
+
+Epoch 9/100
+Total loss: 4.0115
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 58.8042, Std: 39.1814
+Peak memory allocated: 0.09 GB
+
+Epoch 10/100
+Total loss: 3.9973
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 28.7539, Std: 19.6544
+Peak memory allocated: 0.09 GB
+
+Epoch 11/100
+Total loss: 3.7670
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 16.5149, Std: 8.8283
+Peak memory allocated: 0.09 GB
+
+Epoch 12/100
+Total loss: 3.9149
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 19.5769, Std: 13.6446
+Peak memory allocated: 0.09 GB
+
+Epoch 13/100
+Total loss: 3.7736
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 18.1919, Std: 14.8673
+Peak memory allocated: 0.09 GB
+
+Epoch 14/100
+Total loss: 3.8806
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 40.4885, Std: 28.4361
+Peak memory allocated: 0.09 GB
+
+Epoch 15/100
+Total loss: 3.8777
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 28.3917, Std: 21.0433
+Peak memory allocated: 0.09 GB
+
+Epoch 16/100
+Total loss: 3.6471
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 30.6012, Std: 24.7046
+Peak memory allocated: 0.09 GB
+
+Epoch 17/100
+Total loss: 3.7273
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 22.4613, Std: 13.6908
+Peak memory allocated: 0.09 GB
+
+Epoch 18/100
+Total loss: 3.6795
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 26.5271, Std: 23.0219
+Peak memory allocated: 0.09 GB
+
+Epoch 19/100
+Total loss: 3.8002
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 33.6066, Std: 17.3650
+Peak memory allocated: 0.09 GB
+
+Epoch 20/100
+Total loss: 3.5797
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 29.2315, Std: 20.5599
+Peak memory allocated: 0.09 GB
+
+Epoch 21/100
+Total loss: 3.6930
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 27.8788, Std: 21.3303
+Peak memory allocated: 0.09 GB
+
+Epoch 22/100
+Total loss: 3.6445
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 13.9305, Std: 8.6834
+Peak memory allocated: 0.09 GB
+
+Epoch 23/100
+Total loss: 3.5515
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 17.9173, Std: 10.3250
+Peak memory allocated: 0.09 GB
+
+Epoch 24/100
+Total loss: 3.5172
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 15.4935, Std: 9.5358
+Peak memory allocated: 0.09 GB
+
+Epoch 25/100
+Total loss: 3.5608
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 22.4582, Std: 13.5283
+Peak memory allocated: 0.09 GB
+
+Epoch 26/100
+Total loss: 3.5789
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 15.4584, Std: 8.9134
+Peak memory allocated: 0.09 GB
+
+Epoch 27/100
+Total loss: 3.4777
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 14.4271, Std: 9.4874
+Peak memory allocated: 0.09 GB
+
+Epoch 28/100
+Total loss: 3.5830
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 42.3750, Std: 41.2027
+Peak memory allocated: 0.09 GB
+
+Epoch 29/100
+Total loss: 3.5476
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 37.4834, Std: 27.4639
+Peak memory allocated: 0.09 GB
+
+Epoch 30/100
+Total loss: 3.4025
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 34.6023, Std: 26.4616
+Peak memory allocated: 0.09 GB
+
+Epoch 31/100
+Total loss: 3.5899
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 17.9669, Std: 10.6063
+Peak memory allocated: 0.09 GB
+
+Epoch 32/100
+Total loss: 3.5133
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 34.7545, Std: 23.7782
+Peak memory allocated: 0.09 GB
+
+Epoch 33/100
+Total loss: 3.4028
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 37.2481, Std: 24.4408
+Peak memory allocated: 0.09 GB
+
+Epoch 34/100
+Total loss: 3.2927
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 20.9442, Std: 11.9644
+Peak memory allocated: 0.09 GB
+
+Epoch 35/100
+Total loss: 3.4602
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 19.1650, Std: 10.2286
+Peak memory allocated: 0.09 GB
+
+Epoch 36/100
+Total loss: 3.2989
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 21.2932, Std: 11.5654
+Peak memory allocated: 0.09 GB
+
+Epoch 37/100
+Total loss: 3.3895
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 21.2771, Std: 11.2934
+Peak memory allocated: 0.09 GB
+
+Epoch 38/100
+Total loss: 3.2930
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 17.2898, Std: 9.5057
+Peak memory allocated: 0.09 GB
+
+Epoch 39/100
+Total loss: 3.2107
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 20.7435, Std: 8.6805
+Peak memory allocated: 0.09 GB
+
+Epoch 40/100
+Total loss: 3.2646
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 25.0355, Std: 14.8070
+Peak memory allocated: 0.09 GB
+
+Epoch 41/100
+Total loss: 3.2347
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 44.7914, Std: 28.2774
+Peak memory allocated: 0.09 GB
+
+Epoch 42/100
+Total loss: 3.1815
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 30.1004, Std: 20.0052
+Peak memory allocated: 0.09 GB
+
+Epoch 43/100
+Total loss: 3.1724
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 24.2272, Std: 13.7742
+Peak memory allocated: 0.09 GB
+
+Epoch 44/100
+Total loss: 3.2816
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 27.8832, Std: 16.1760
+Peak memory allocated: 0.09 GB
+
+Epoch 45/100
+Total loss: 3.2037
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 22.2664, Std: 16.1292
+Peak memory allocated: 0.09 GB
+
+Epoch 46/100
+Total loss: 3.2237
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 32.0685, Std: 24.2982
+Peak memory allocated: 0.09 GB
+
+Epoch 47/100
+Total loss: 3.1009
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 27.2131, Std: 15.7306
+Peak memory allocated: 0.09 GB
+
+Epoch 48/100
+Total loss: 3.2785
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 30.6345, Std: 16.3705
+Peak memory allocated: 0.09 GB
+
+Epoch 49/100
+Total loss: 3.0185
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 29.2448, Std: 22.6068
+Peak memory allocated: 0.09 GB
+
+Epoch 50/100
+Total loss: 3.0844
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 36.8956, Std: 25.6333
+Peak memory allocated: 0.09 GB
+
+Epoch 51/100
+Total loss: 3.1638
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 20.5096, Std: 14.6459
+Peak memory allocated: 0.09 GB
+
+Epoch 52/100
+Total loss: 3.0242
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 22.3639, Std: 13.1591
+Peak memory allocated: 0.09 GB
+
+Epoch 53/100
+Total loss: 3.1070
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 23.0621, Std: 18.1205
+Peak memory allocated: 0.09 GB
+
+Epoch 54/100
+Total loss: 3.1079
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 39.6253, Std: 25.0225
+Peak memory allocated: 0.09 GB
+
+Epoch 55/100
+Total loss: 2.9443
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 26.0408, Std: 17.5761
+Peak memory allocated: 0.09 GB
+
+Epoch 56/100
+Total loss: 2.9311
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 16.3982, Std: 7.7359
+Peak memory allocated: 0.09 GB
+
+Epoch 57/100
+Total loss: 2.9625
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 17.9311, Std: 12.8284
+Peak memory allocated: 0.09 GB
+
+Epoch 58/100
+Total loss: 2.9881
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 27.8417, Std: 14.8041
+Peak memory allocated: 0.09 GB
+
+Epoch 59/100
+Total loss: 3.0778
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 31.7260, Std: 22.6686
+Peak memory allocated: 0.09 GB
+
+Epoch 60/100
+Total loss: 3.0171
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 56.4396, Std: 38.3689
+Peak memory allocated: 0.09 GB
+
+Epoch 61/100
+Total loss: 3.0075
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 46.0805, Std: 33.0169
+Peak memory allocated: 0.09 GB
+
+Epoch 62/100
+Total loss: 3.0370
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 25.3604, Std: 20.4696
+Peak memory allocated: 0.09 GB
+
+Epoch 63/100
+Total loss: 2.8675
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 14.3204, Std: 8.3066
+Peak memory allocated: 0.09 GB
+
+Epoch 64/100
+Total loss: 2.9430
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 23.0433, Std: 13.4597
+Peak memory allocated: 0.09 GB
+
+Epoch 65/100
+Total loss: 2.8676
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 16.5437, Std: 8.7945
+Peak memory allocated: 0.09 GB
+
+Epoch 66/100
+Total loss: 2.8300
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 14.4174, Std: 7.0324
+Peak memory allocated: 0.09 GB
+
+Epoch 67/100
+Total loss: 2.7874
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 9.8646, Std: 5.1411
+Peak memory allocated: 0.09 GB
+
+Epoch 68/100
+Total loss: 2.8342
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 18.4639, Std: 9.1388
+Peak memory allocated: 0.09 GB
+
+Epoch 69/100
+Total loss: 2.9170
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 15.9019, Std: 8.9660
+Peak memory allocated: 0.09 GB
+
+Epoch 70/100
+Total loss: 2.8352
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 18.8109, Std: 10.8485
+Peak memory allocated: 0.09 GB
+
+Epoch 71/100
+Total loss: 2.7307
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 13.5071, Std: 6.9907
+Peak memory allocated: 0.09 GB
+
+Epoch 72/100
+Total loss: 2.7739
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 20.8184, Std: 14.0778
+Peak memory allocated: 0.09 GB
+
+Epoch 73/100
+Total loss: 2.8101
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 33.5665, Std: 22.4933
+Peak memory allocated: 0.09 GB
+
+Epoch 74/100
+Total loss: 2.9212
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 29.8528, Std: 19.9768
+Peak memory allocated: 0.09 GB
+
+Epoch 75/100
+Total loss: 2.7704
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 23.8988, Std: 12.2907
+Peak memory allocated: 0.09 GB
+
+Epoch 76/100
+Total loss: 2.7406
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 23.6325, Std: 12.1110
+Peak memory allocated: 0.09 GB
+
+Epoch 77/100
+Total loss: 2.8562
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 36.2881, Std: 26.3934
+Peak memory allocated: 0.09 GB
+
+Epoch 78/100
+Total loss: 2.7432
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 20.4794, Std: 13.1726
+Peak memory allocated: 0.09 GB
+
+Epoch 79/100
+Total loss: 2.6901
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 16.0671, Std: 9.9603
+Peak memory allocated: 0.09 GB
+
+Epoch 80/100
+Total loss: 2.7568
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 18.2280, Std: 11.8042
+Peak memory allocated: 0.09 GB
+
+Epoch 81/100
+Total loss: 2.6558
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 19.4561, Std: 13.1469
+Peak memory allocated: 0.09 GB
+
+Epoch 82/100
+Total loss: 2.7297
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 23.7870, Std: 10.9055
+Peak memory allocated: 0.09 GB
+
+Epoch 83/100
+Total loss: 2.6834
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 29.4187, Std: 21.2969
+Peak memory allocated: 0.09 GB
+
+Epoch 84/100
+Total loss: 2.6843
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 29.7310, Std: 20.7709
+Peak memory allocated: 0.09 GB
+
+Epoch 85/100
+Total loss: 2.6301
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 14.2779, Std: 9.6318
+Peak memory allocated: 0.09 GB
+
+Epoch 86/100
+Total loss: 2.6388
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 21.4911, Std: 10.5730
+Peak memory allocated: 0.09 GB
+
+Epoch 87/100
+Total loss: 2.5650
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 14.6556, Std: 7.1320
+Peak memory allocated: 0.09 GB
+
+Epoch 88/100
+Total loss: 2.7326
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 29.3460, Std: 16.0544
+Peak memory allocated: 0.09 GB
+
+Epoch 89/100
+Total loss: 2.5763
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 21.0076, Std: 11.0648
+Peak memory allocated: 0.09 GB
+
+Epoch 90/100
+Total loss: 2.6284
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 14.0684, Std: 7.5571
+Peak memory allocated: 0.09 GB
+
+Epoch 91/100
+Total loss: 2.5685
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 22.1465, Std: 10.3469
+Peak memory allocated: 0.09 GB
+
+Epoch 92/100
+Total loss: 2.6550
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 22.1265, Std: 10.4797
+Peak memory allocated: 0.09 GB
+
+Epoch 93/100
+Total loss: 2.5178
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 15.5038, Std: 9.3830
+Peak memory allocated: 0.09 GB
+
+Epoch 94/100
+Total loss: 2.6373
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 21.6741, Std: 9.3317
+Peak memory allocated: 0.09 GB
+
+Epoch 95/100
+Total loss: 2.5495
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 16.1028, Std: 9.5496
+Peak memory allocated: 0.09 GB
+
+Epoch 96/100
+Total loss: 2.5178
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 13.3466, Std: 7.6481
+Peak memory allocated: 0.09 GB
+
+Epoch 97/100
+Total loss: 2.6119
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 37.0195, Std: 32.5753
+Peak memory allocated: 0.09 GB
+
+Epoch 98/100
+Total loss: 2.5099
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 22.7171, Std: 16.7155
+Peak memory allocated: 0.09 GB
+
+Epoch 99/100
+Total loss: 2.5326
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 25.7697, Std: 18.5220
+Peak memory allocated: 0.09 GB
+
+Epoch 100/100
+Total loss: 2.5974
+Component losses - Noise: nan, Signal: nan, Peaks: nan
+Gradient norm - Mean: 14.1707, Std: 7.6826
+Peak memory allocated: 0.09 GB
+Training Contrastive Network (dummy) ...
+Contrastive Epoch 1/10 - Loss: 0.003918
+Contrastive Epoch 2/10 - Loss: 0.001731
+Contrastive Epoch 3/10 - Loss: 0.001043
+Contrastive Epoch 4/10 - Loss: 0.000763
+Contrastive Epoch 5/10 - Loss: 0.000598
+Contrastive Epoch 6/10 - Loss: 0.000499
+Contrastive Epoch 7/10 - Loss: 0.000426
+Contrastive Epoch 8/10 - Loss: 0.000375
+Contrastive Epoch 9/10 - Loss: 0.000332
+Contrastive Epoch 10/10 - Loss: 0.000298
+Detected classes: [0 1]
+
+Processing class 0...
+
+Processing class 1...
+
+Visualizing class 0...
+Saved plot for class 0 to hpc_results/
+
+Peak Region Analysis:
+Peak @ 1446.51 cm⁻¹:
+  Max Intensity: Real=0.13, Synth=0.72 (Δ=0.59)
+  Peak Area: Real=-0.80, Synth=-7.74 (-863.5% difference)
+
+WARNING: Large intensity difference at 1446.51 cm⁻¹
+Peak @ 1377.08 cm⁻¹:
+  Max Intensity: Real=0.08, Synth=0.33 (Δ=0.25)
+  Peak Area: Real=0.75, Synth=-2.03 (372.7% difference)
+
+WARNING: Large intensity difference at 1377.08 cm⁻¹
+WARNING: Significant area variation at 1377.08 cm⁻¹ (>15%)
+Peak @ 1234.35 cm⁻¹:
+  Max Intensity: Real=0.13, Synth=0.28 (Δ=0.15)
+  Peak Area: Real=-0.64, Synth=0.19 (-129.2% difference)
+
+WARNING: Large intensity difference at 1234.35 cm⁻¹
+Peak @ 1045.34 cm⁻¹:
+  Max Intensity: Real=1.45, Synth=-0.03 (Δ=1.49)
+  Peak Area: Real=-1.36, Synth=3.38 (-347.4% difference)
+
+WARNING: Large intensity difference at 1045.34 cm⁻¹
+Peak @ 902.622 cm⁻¹:
+  Max Intensity: Real=0.01, Synth=1.26 (Δ=1.25)
+  Peak Area: Real=1.49, Synth=-7.81 (625.1% difference)
+
+WARNING: Large intensity difference at 902.622 cm⁻¹
+WARNING: Significant area variation at 902.622 cm⁻¹ (>15%)
+
+Visualizing class 1...
+Saved plot for class 1 to hpc_results/
+
+Peak Region Analysis:
+Peak @ 1446.51 cm⁻¹:
+  Max Intensity: Real=0.43, Synth=0.49 (Δ=0.05)
+  Peak Area: Real=-4.18, Synth=-0.28 (-93.4% difference)
+
+Peak @ 1377.08 cm⁻¹:
+  Max Intensity: Real=0.78, Synth=0.92 (Δ=0.14)
+  Peak Area: Real=-1.61, Synth=2.33 (-244.3% difference)
+
+WARNING: Large intensity difference at 1377.08 cm⁻¹
+Peak @ 1234.35 cm⁻¹:
+  Max Intensity: Real=0.40, Synth=0.67 (Δ=0.27)
+  Peak Area: Real=-3.84, Synth=-5.31 (-38.4% difference)
+
+WARNING: Large intensity difference at 1234.35 cm⁻¹
+Peak @ 1045.34 cm⁻¹:
+  Max Intensity: Real=-0.06, Synth=0.64 (Δ=0.70)
+  Peak Area: Real=1.84, Synth=-3.21 (275.1% difference)
+
+WARNING: Large intensity difference at 1045.34 cm⁻¹
+WARNING: Significant area variation at 1045.34 cm⁻¹ (>15%)
+Peak @ 902.622 cm⁻¹:
+  Max Intensity: Real=-0.82, Synth=0.78 (Δ=1.60)
+  Peak Area: Real=8.13, Synth=-4.91 (160.4% difference)
+
+WARNING: Large intensity difference at 902.622 cm⁻¹
+WARNING: Significant area variation at 902.622 cm⁻¹ (>15%)

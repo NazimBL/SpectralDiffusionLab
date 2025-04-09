@@ -1,0 +1,490 @@
+C:\Users\NazimAhmed_Belabbaci\PycharmProjects\EndoCancerFTIR_CDM\venv\Scripts\python.exe C:\Users\NazimAhmed_Belabbaci\PycharmProjects\EndoCancerFTIR_CDM\cdm_final_triplet.py 
+
+=== Hardware Configuration ===
+Using device: cpu
+PyTorch version: 2.6.0+cpu
+Num CPUs: 20
+
+=== Training Parameters ===
+Timesteps: 300
+Base channels: 64
+Loss weights - Signal: 4, Peaks: 4
+Guidance scale: 3
+Peak mask unique weights: [1. 6.]
+Training 1D U-Net Diffusion Model with peak-weighted loss...
+
+Epoch 1/80
+Total loss: 2.0614
+Component losses - Noise: 0.9818, Signal: 0.0074, Peaks: 0.0098
+Gradient norm - Mean: 0.3814, Std: 0.1243
+
+Epoch 2/80
+Total loss: 1.9777
+Component losses - Noise: 0.9073, Signal: 0.0073, Peaks: 0.0098
+Gradient norm - Mean: 0.5245, Std: 0.1141
+
+Epoch 3/80
+Total loss: 1.7549
+Component losses - Noise: 0.7002, Signal: 0.0074, Peaks: 0.0099
+Gradient norm - Mean: 0.9923, Std: 0.1797
+
+Epoch 4/80
+Total loss: 1.3533
+Component losses - Noise: 0.3132, Signal: 0.0073, Peaks: 0.0100
+Gradient norm - Mean: 1.5620, Std: 0.7698
+
+Epoch 5/80
+Total loss: 1.2581
+Component losses - Noise: 0.1864, Signal: 0.0075, Peaks: 0.0103
+Gradient norm - Mean: 0.9859, Std: 0.4573
+
+Epoch 6/80
+Total loss: 1.2149
+Component losses - Noise: 0.1551, Signal: 0.0076, Peaks: 0.0104
+Gradient norm - Mean: 0.7873, Std: 0.4414
+
+Epoch 7/80
+Total loss: 1.2412
+Component losses - Noise: 0.1494, Signal: 0.0075, Peaks: 0.0102
+Gradient norm - Mean: 0.5073, Std: 0.2339
+
+Epoch 8/80
+Total loss: 1.2546
+Component losses - Noise: 0.1451, Signal: 0.0074, Peaks: 0.0102
+Gradient norm - Mean: 0.8525, Std: 0.3970
+
+Epoch 9/80
+Total loss: 1.1907
+Component losses - Noise: 0.1264, Signal: 0.0074, Peaks: 0.0102
+Gradient norm - Mean: 0.6777, Std: 0.3459
+
+Epoch 10/80
+Total loss: 1.1631
+Component losses - Noise: 0.1123, Signal: 0.0073, Peaks: 0.0102
+Gradient norm - Mean: 0.7577, Std: 0.3889
+
+Epoch 11/80
+Total loss: 1.1659
+Component losses - Noise: 0.0986, Signal: 0.0073, Peaks: 0.0101
+Gradient norm - Mean: 1.1786, Std: 0.9445
+
+Epoch 12/80
+Total loss: 1.1239
+Component losses - Noise: 0.0967, Signal: 0.0072, Peaks: 0.0099
+Gradient norm - Mean: 1.9143, Std: 1.2567
+
+Epoch 13/80
+Total loss: 1.1372
+Component losses - Noise: 0.0825, Signal: 0.0072, Peaks: 0.0099
+Gradient norm - Mean: 1.3452, Std: 0.8004
+
+Epoch 14/80
+Total loss: 1.0869
+Component losses - Noise: 0.0722, Signal: 0.0072, Peaks: 0.0098
+Gradient norm - Mean: 0.9711, Std: 0.4133
+
+Epoch 15/80
+Total loss: 1.1403
+Component losses - Noise: 0.0723, Signal: 0.0071, Peaks: 0.0096
+Gradient norm - Mean: 1.6249, Std: 0.9929
+
+Epoch 16/80
+Total loss: 1.1267
+Component losses - Noise: 0.0756, Signal: 0.0070, Peaks: 0.0094
+Gradient norm - Mean: 3.9215, Std: 1.3961
+
+Epoch 17/80
+Total loss: 1.1621
+Component losses - Noise: 0.0653, Signal: 0.0070, Peaks: 0.0094
+Gradient norm - Mean: 2.1006, Std: 1.2527
+
+Epoch 18/80
+Total loss: 1.1197
+Component losses - Noise: 0.0613, Signal: 0.0070, Peaks: 0.0091
+Gradient norm - Mean: 2.3823, Std: 1.4156
+
+Epoch 19/80
+Total loss: 1.1243
+Component losses - Noise: 0.0624, Signal: 0.0070, Peaks: 0.0090
+Gradient norm - Mean: 2.1008, Std: 1.2719
+
+Epoch 20/80
+Total loss: 1.1136
+Component losses - Noise: 0.0574, Signal: 0.0071, Peaks: 0.0093
+Gradient norm - Mean: 4.3960, Std: 1.1036
+
+Epoch 21/80
+Total loss: 1.1113
+Component losses - Noise: 0.0520, Signal: 0.0070, Peaks: 0.0091
+Gradient norm - Mean: 2.1026, Std: 1.3586
+
+Epoch 22/80
+Total loss: 1.1362
+Component losses - Noise: 0.0596, Signal: 0.0069, Peaks: 0.0088
+Gradient norm - Mean: 1.2157, Std: 0.9006
+
+Epoch 23/80
+Total loss: 1.0868
+Component losses - Noise: 0.0495, Signal: 0.0070, Peaks: 0.0088
+Gradient norm - Mean: 2.0255, Std: 1.0415
+
+Epoch 24/80
+Total loss: 1.0947
+Component losses - Noise: 0.0549, Signal: 0.0069, Peaks: 0.0087
+Gradient norm - Mean: 2.0444, Std: 1.2047
+
+Epoch 25/80
+Total loss: 1.1155
+Component losses - Noise: 0.0524, Signal: 0.0069, Peaks: 0.0087
+Gradient norm - Mean: 2.5725, Std: 1.0961
+
+Epoch 26/80
+Total loss: 1.0956
+Component losses - Noise: 0.0482, Signal: 0.0069, Peaks: 0.0086
+Gradient norm - Mean: 1.5013, Std: 0.6339
+
+Epoch 27/80
+Total loss: 1.1452
+Component losses - Noise: 0.0514, Signal: 0.0069, Peaks: 0.0085
+Gradient norm - Mean: 1.9231, Std: 0.8423
+
+Epoch 28/80
+Total loss: 1.1167
+Component losses - Noise: 0.0513, Signal: 0.0069, Peaks: 0.0087
+Gradient norm - Mean: 4.2183, Std: 1.2773
+
+Epoch 29/80
+Total loss: 1.1248
+Component losses - Noise: 0.0497, Signal: 0.0069, Peaks: 0.0086
+Gradient norm - Mean: 1.9011, Std: 1.0744
+
+Epoch 30/80
+Total loss: 1.0924
+Component losses - Noise: 0.0468, Signal: 0.0070, Peaks: 0.0087
+Gradient norm - Mean: 2.8174, Std: 1.7232
+
+Epoch 31/80
+Total loss: 1.0921
+Component losses - Noise: 0.0468, Signal: 0.0069, Peaks: 0.0087
+Gradient norm - Mean: 3.6987, Std: 1.4670
+
+Epoch 32/80
+Total loss: 1.1544
+Component losses - Noise: 0.0488, Signal: 0.0069, Peaks: 0.0086
+Gradient norm - Mean: 3.5350, Std: 1.2735
+
+Epoch 33/80
+Total loss: 1.1335
+Component losses - Noise: 0.0535, Signal: 0.0067, Peaks: 0.0085
+Gradient norm - Mean: 3.1272, Std: 1.4277
+
+Epoch 34/80
+Total loss: 1.1040
+Component losses - Noise: 0.0417, Signal: 0.0067, Peaks: 0.0082
+Gradient norm - Mean: 1.3924, Std: 0.7991
+
+Epoch 35/80
+Total loss: 1.1191
+Component losses - Noise: 0.0450, Signal: 0.0063, Peaks: 0.0076
+Gradient norm - Mean: 2.3719, Std: 1.2551
+
+Epoch 36/80
+Total loss: 1.0236
+Component losses - Noise: 0.0414, Signal: 0.0059, Peaks: 0.0071
+Gradient norm - Mean: 3.4715, Std: 1.2629
+
+Epoch 37/80
+Total loss: 1.1142
+Component losses - Noise: 0.0439, Signal: 0.0057, Peaks: 0.0069
+Gradient norm - Mean: 4.1343, Std: 1.1669
+
+Epoch 38/80
+Total loss: 1.0477
+Component losses - Noise: 0.0449, Signal: 0.0055, Peaks: 0.0065
+Gradient norm - Mean: 2.7323, Std: 1.2408
+
+Epoch 39/80
+Total loss: 1.1284
+Component losses - Noise: 0.0445, Signal: 0.0057, Peaks: 0.0070
+Gradient norm - Mean: 3.8882, Std: 1.4927
+
+Epoch 40/80
+Total loss: 1.0998
+Component losses - Noise: 0.0529, Signal: 0.0058, Peaks: 0.0072
+Gradient norm - Mean: 4.1046, Std: 1.4687
+
+Epoch 41/80
+Total loss: 1.0996
+Component losses - Noise: 0.0442, Signal: 0.0055, Peaks: 0.0066
+Gradient norm - Mean: 2.9414, Std: 1.3701
+
+Epoch 42/80
+Total loss: 1.1114
+Component losses - Noise: 0.0467, Signal: 0.0055, Peaks: 0.0065
+Gradient norm - Mean: 2.9349, Std: 1.5058
+
+Epoch 43/80
+Total loss: 1.1192
+Component losses - Noise: 0.0434, Signal: 0.0055, Peaks: 0.0064
+Gradient norm - Mean: 2.1939, Std: 1.6406
+
+Epoch 44/80
+Total loss: 1.0943
+Component losses - Noise: 0.0387, Signal: 0.0055, Peaks: 0.0065
+Gradient norm - Mean: 3.3869, Std: 1.4990
+
+Epoch 45/80
+Total loss: 1.0714
+Component losses - Noise: 0.0397, Signal: 0.0055, Peaks: 0.0064
+Gradient norm - Mean: 1.9251, Std: 1.3874
+
+Epoch 46/80
+Total loss: 1.0955
+Component losses - Noise: 0.0413, Signal: 0.0055, Peaks: 0.0064
+Gradient norm - Mean: 2.5831, Std: 1.3768
+
+Epoch 47/80
+Total loss: 1.0846
+Component losses - Noise: 0.0437, Signal: 0.0054, Peaks: 0.0063
+Gradient norm - Mean: 1.0705, Std: 0.6520
+
+Epoch 48/80
+Total loss: 1.0764
+Component losses - Noise: 0.0372, Signal: 0.0054, Peaks: 0.0063
+Gradient norm - Mean: 0.9978, Std: 0.6784
+
+Epoch 49/80
+Total loss: 1.0963
+Component losses - Noise: 0.0411, Signal: 0.0053, Peaks: 0.0062
+Gradient norm - Mean: 1.0459, Std: 0.4529
+
+Epoch 50/80
+Total loss: 1.0950
+Component losses - Noise: 0.0404, Signal: 0.0054, Peaks: 0.0062
+Gradient norm - Mean: 1.2266, Std: 0.5428
+
+Epoch 51/80
+Total loss: 1.0859
+Component losses - Noise: 0.0396, Signal: 0.0054, Peaks: 0.0063
+Gradient norm - Mean: 2.0502, Std: 1.3418
+
+Epoch 52/80
+Total loss: 1.1164
+Component losses - Noise: 0.0396, Signal: 0.0054, Peaks: 0.0063
+Gradient norm - Mean: 2.4657, Std: 1.3242
+
+Epoch 53/80
+Total loss: 1.0955
+Component losses - Noise: 0.0399, Signal: 0.0053, Peaks: 0.0062
+Gradient norm - Mean: 1.0627, Std: 0.5343
+
+Epoch 54/80
+Total loss: 1.1056
+Component losses - Noise: 0.0391, Signal: 0.0054, Peaks: 0.0063
+Gradient norm - Mean: 1.7486, Std: 0.8802
+
+Epoch 55/80
+Total loss: 1.1078
+Component losses - Noise: 0.0403, Signal: 0.0053, Peaks: 0.0063
+Gradient norm - Mean: 2.7508, Std: 1.3487
+
+Epoch 56/80
+Total loss: 1.0998
+Component losses - Noise: 0.0402, Signal: 0.0054, Peaks: 0.0064
+Gradient norm - Mean: 3.6481, Std: 1.2280
+
+Epoch 57/80
+Total loss: 1.0764
+Component losses - Noise: 0.0367, Signal: 0.0053, Peaks: 0.0062
+Gradient norm - Mean: 2.3019, Std: 1.0893
+
+Epoch 58/80
+Total loss: 1.0931
+Component losses - Noise: 0.0362, Signal: 0.0052, Peaks: 0.0061
+Gradient norm - Mean: 1.4631, Std: 0.9749
+
+Epoch 59/80
+Total loss: 1.0289
+Component losses - Noise: 0.0374, Signal: 0.0052, Peaks: 0.0061
+Gradient norm - Mean: 1.5649, Std: 0.8190
+
+Epoch 60/80
+Total loss: 1.0843
+Component losses - Noise: 0.0380, Signal: 0.0052, Peaks: 0.0061
+Gradient norm - Mean: 2.1767, Std: 1.1950
+
+Epoch 61/80
+Total loss: 1.0535
+Component losses - Noise: 0.0351, Signal: 0.0053, Peaks: 0.0063
+Gradient norm - Mean: 2.8770, Std: 1.6432
+
+Epoch 62/80
+Total loss: 1.0967
+Component losses - Noise: 0.0362, Signal: 0.0052, Peaks: 0.0061
+Gradient norm - Mean: 1.7305, Std: 0.9224
+
+Epoch 63/80
+Total loss: 1.0815
+Component losses - Noise: 0.0341, Signal: 0.0052, Peaks: 0.0060
+Gradient norm - Mean: 0.9593, Std: 0.5559
+
+Epoch 64/80
+Total loss: 1.0777
+Component losses - Noise: 0.0342, Signal: 0.0051, Peaks: 0.0059
+Gradient norm - Mean: 0.9537, Std: 0.4460
+
+Epoch 65/80
+Total loss: 1.0883
+Component losses - Noise: 0.0374, Signal: 0.0050, Peaks: 0.0059
+Gradient norm - Mean: 1.7834, Std: 1.4527
+
+Epoch 66/80
+Total loss: 1.1058
+Component losses - Noise: 0.0307, Signal: 0.0051, Peaks: 0.0059
+Gradient norm - Mean: 1.2890, Std: 0.9307
+
+Epoch 67/80
+Total loss: 1.0787
+Component losses - Noise: 0.0347, Signal: 0.0051, Peaks: 0.0060
+Gradient norm - Mean: 3.1714, Std: 1.4487
+
+Epoch 68/80
+Total loss: 1.0708
+Component losses - Noise: 0.0352, Signal: 0.0051, Peaks: 0.0062
+Gradient norm - Mean: 3.7029, Std: 1.5368
+
+Epoch 69/80
+Total loss: 1.0711
+Component losses - Noise: 0.0314, Signal: 0.0049, Peaks: 0.0059
+Gradient norm - Mean: 3.1170, Std: 1.6018
+
+Epoch 70/80
+Total loss: 1.0857
+Component losses - Noise: 0.0334, Signal: 0.0047, Peaks: 0.0056
+Gradient norm - Mean: 2.9669, Std: 1.3377
+
+Epoch 71/80
+Total loss: 1.0645
+Component losses - Noise: 0.0289, Signal: 0.0040, Peaks: 0.0049
+Gradient norm - Mean: 2.3926, Std: 1.5413
+
+Epoch 72/80
+Total loss: 1.0647
+Component losses - Noise: 0.0307, Signal: 0.0036, Peaks: 0.0045
+Gradient norm - Mean: 2.5191, Std: 1.4082
+
+Epoch 73/80
+Total loss: 1.0612
+Component losses - Noise: 0.0305, Signal: 0.0036, Peaks: 0.0046
+Gradient norm - Mean: 4.2011, Std: 1.3158
+
+Epoch 74/80
+Total loss: 1.0734
+Component losses - Noise: 0.0289, Signal: 0.0035, Peaks: 0.0043
+Gradient norm - Mean: 3.4247, Std: 1.5762
+
+Epoch 75/80
+Total loss: 1.0619
+Component losses - Noise: 0.0299, Signal: 0.0035, Peaks: 0.0044
+Gradient norm - Mean: 2.9120, Std: 1.7953
+
+Epoch 76/80
+Total loss: 1.0442
+Component losses - Noise: 0.0311, Signal: 0.0035, Peaks: 0.0044
+Gradient norm - Mean: 3.7922, Std: 1.4437
+
+Epoch 77/80
+Total loss: 1.0437
+Component losses - Noise: 0.0315, Signal: 0.0034, Peaks: 0.0042
+Gradient norm - Mean: 3.5947, Std: 1.5249
+
+Epoch 78/80
+Total loss: 1.0473
+Component losses - Noise: 0.0258, Signal: 0.0033, Peaks: 0.0040
+Gradient norm - Mean: 2.4845, Std: 1.2486
+
+Epoch 79/80
+Total loss: 1.0587
+Component losses - Noise: 0.0265, Signal: 0.0033, Peaks: 0.0041
+Gradient norm - Mean: 2.7200, Std: 1.5438
+
+Epoch 80/80
+Total loss: 1.0898
+Component losses - Noise: 0.0349, Signal: 0.0039, Peaks: 0.0051
+Gradient norm - Mean: 4.6825, Std: 0.8043
+Evaluating model embeddings using Triplet Loss (hard negatives)...
+Detected classes: [0 1]
+
+Processing class 0...
+
+Processing class 1...
+
+Visualizing class 0...
+Saved plot for class 0 to hpc_results/
+
+Peak Region Analysis:
+Peak @ 1446 cm⁻¹:
+  Max Intensity: Real=0.17, Synth=0.17 (Δ=0.01)
+  Peak Area: Real=-2.15, Synth=2.89 (234.7% difference)
+
+WARNING: Significant area variation at 1446 cm⁻¹ (>15%)
+Peak @ 1377 cm⁻¹:
+  Max Intensity: Real=0.05, Synth=0.19 (Δ=0.14)
+  Peak Area: Real=0.79, Synth=2.01 (154.8% difference)
+
+WARNING: Large intensity difference at 1377 cm⁻¹
+WARNING: Significant area variation at 1377 cm⁻¹ (>15%)
+Peak @ 1234 cm⁻¹:
+  Max Intensity: Real=0.03, Synth=0.07 (Δ=0.04)
+  Peak Area: Real=0.30, Synth=-0.59 (297.4% difference)
+
+WARNING: Significant area variation at 1234 cm⁻¹ (>15%)
+Peak @ 1045 cm⁻¹:
+  Max Intensity: Real=0.01, Synth=0.05 (Δ=0.04)
+  Peak Area: Real=0.42, Synth=4.92 (1073.0% difference)
+
+WARNING: Significant area variation at 1045 cm⁻¹ (>15%)
+Peak @ 900 cm⁻¹:
+  Max Intensity: Real=0.01, Synth=0.03 (Δ=0.02)
+  Peak Area: Real=0.12, Synth=1.04 (789.2% difference)
+
+WARNING: Significant area variation at 900 cm⁻¹ (>15%)
+
+Visualizing class 1...
+C:\Users\NazimAhmed_Belabbaci\PycharmProjects\EndoCancerFTIR_CDM\cdm_final_triplet.py:329: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  real_area = np.trapz(real_peak, wn_range)
+C:\Users\NazimAhmed_Belabbaci\PycharmProjects\EndoCancerFTIR_CDM\cdm_final_triplet.py:330: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  synth_area = np.trapz(synth_peak, wn_range)
+Saved plot for class 1 to hpc_results/
+
+Peak Region Analysis:
+Peak @ 1446 cm⁻¹:
+  Max Intensity: Real=0.18, Synth=0.15 (Δ=0.03)
+  Peak Area: Real=-2.11, Synth=0.31 (114.6% difference)
+
+WARNING: Significant area variation at 1446 cm⁻¹ (>15%)
+Peak @ 1377 cm⁻¹:
+  Max Intensity: Real=0.05, Synth=0.05 (Δ=0.00)
+  Peak Area: Real=0.82, Synth=-0.02 (102.0% difference)
+
+WARNING: Significant area variation at 1377 cm⁻¹ (>15%)
+Peak @ 1234 cm⁻¹:
+  Max Intensity: Real=0.03, Synth=0.03 (Δ=0.01)
+  Peak Area: Real=0.36, Synth=0.63 (76.0% difference)
+
+WARNING: Significant area variation at 1234 cm⁻¹ (>15%)
+Peak @ 1045 cm⁻¹:
+  Max Intensity: Real=0.01, Synth=0.05 (Δ=0.04)
+  Peak Area: Real=0.39, Synth=-0.82 (309.7% difference)
+
+WARNING: Significant area variation at 1045 cm⁻¹ (>15%)
+Peak @ 900 cm⁻¹:
+  Max Intensity: Real=0.01, Synth=0.10 (Δ=0.09)
+  Peak Area: Real=0.16, Synth=-0.17 (204.7% difference)
+
+WARNING: Significant area variation at 900 cm⁻¹ (>15%)
+
+Calculating FID between real and synthetic data...
+FID score: 2452189.06
+
+Process finished with exit code 0

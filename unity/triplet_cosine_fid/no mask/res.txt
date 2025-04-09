@@ -1,0 +1,509 @@
+
+=== Hardware Configuration ===
+Using device: cuda
+GPU: NVIDIA GeForce GTX 1080 Ti
+CUDA version: 12.1
+PyTorch version: 2.3.1+cu121
+Num CPUs: 24
+
+=== Training Parameters ===
+Timesteps: 200
+Base channels: 64
+Loss weights - Signal: 4
+Guidance scale: 2
+Training 1D U-Net Diffusion Model with peak-weighted loss...
+
+Epoch 1/80
+Total loss: 2.0286
+Component losses - Noise: 0.9884, Signal: 0.0073
+Gradient norm - Mean: 0.3706, Std: 0.1266
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 2/80
+Total loss: 1.9380
+Component losses - Noise: 0.9075, Signal: 0.0074
+Gradient norm - Mean: 0.5206, Std: 0.1049
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 3/80
+Total loss: 1.7001
+Component losses - Noise: 0.7053, Signal: 0.0073
+Gradient norm - Mean: 0.9945, Std: 0.1820
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 4/80
+Total loss: 1.3209
+Component losses - Noise: 0.3108, Signal: 0.0074
+Gradient norm - Mean: 1.8757, Std: 1.0872
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 5/80
+Total loss: 1.2491
+Component losses - Noise: 0.1944, Signal: 0.0075
+Gradient norm - Mean: 1.0393, Std: 0.6483
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 6/80
+Total loss: 1.2095
+Component losses - Noise: 0.1649, Signal: 0.0076
+Gradient norm - Mean: 0.6911, Std: 0.3874
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 7/80
+Total loss: 1.1731
+Component losses - Noise: 0.1493, Signal: 0.0076
+Gradient norm - Mean: 0.4636, Std: 0.2917
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 8/80
+Total loss: 1.1815
+Component losses - Noise: 0.1465, Signal: 0.0075
+Gradient norm - Mean: 0.5574, Std: 0.2628
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 9/80
+Total loss: 1.1658
+Component losses - Noise: 0.1298, Signal: 0.0075
+Gradient norm - Mean: 0.6661, Std: 0.3784
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 10/80
+Total loss: 1.1575
+Component losses - Noise: 0.1145, Signal: 0.0075
+Gradient norm - Mean: 0.4706, Std: 0.2572
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 11/80
+Total loss: 1.1210
+Component losses - Noise: 0.1024, Signal: 0.0074
+Gradient norm - Mean: 0.9791, Std: 0.4731
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 12/80
+Total loss: 1.1385
+Component losses - Noise: 0.0943, Signal: 0.0074
+Gradient norm - Mean: 1.1943, Std: 0.7565
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 13/80
+Total loss: 1.1265
+Component losses - Noise: 0.0812, Signal: 0.0074
+Gradient norm - Mean: 0.9639, Std: 0.6495
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 14/80
+Total loss: 1.0857
+Component losses - Noise: 0.0725, Signal: 0.0074
+Gradient norm - Mean: 1.2317, Std: 0.6106
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 15/80
+Total loss: 1.0763
+Component losses - Noise: 0.0775, Signal: 0.0072
+Gradient norm - Mean: 0.9901, Std: 0.6276
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 16/80
+Total loss: 1.1008
+Component losses - Noise: 0.0672, Signal: 0.0072
+Gradient norm - Mean: 0.5816, Std: 0.3127
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 17/80
+Total loss: 1.0952
+Component losses - Noise: 0.0632, Signal: 0.0072
+Gradient norm - Mean: 1.1764, Std: 0.9548
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 18/80
+Total loss: 1.0874
+Component losses - Noise: 0.0652, Signal: 0.0071
+Gradient norm - Mean: 1.2947, Std: 0.8767
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 19/80
+Total loss: 1.1139
+Component losses - Noise: 0.0618, Signal: 0.0071
+Gradient norm - Mean: 0.9209, Std: 0.4337
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 20/80
+Total loss: 1.0594
+Component losses - Noise: 0.0555, Signal: 0.0071
+Gradient norm - Mean: 1.5324, Std: 1.1380
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 21/80
+Total loss: 1.0741
+Component losses - Noise: 0.0558, Signal: 0.0072
+Gradient norm - Mean: 2.4610, Std: 1.4379
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 22/80
+Total loss: 1.1135
+Component losses - Noise: 0.0582, Signal: 0.0070
+Gradient norm - Mean: 1.4771, Std: 0.9981
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 23/80
+Total loss: 1.0644
+Component losses - Noise: 0.0566, Signal: 0.0070
+Gradient norm - Mean: 1.1226, Std: 0.5623
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 24/80
+Total loss: 1.0919
+Component losses - Noise: 0.0512, Signal: 0.0070
+Gradient norm - Mean: 0.6269, Std: 0.2761
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 25/80
+Total loss: 1.0746
+Component losses - Noise: 0.0506, Signal: 0.0071
+Gradient norm - Mean: 1.8872, Std: 1.2314
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 26/80
+Total loss: 1.0249
+Component losses - Noise: 0.0483, Signal: 0.0070
+Gradient norm - Mean: 1.8564, Std: 1.0466
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 27/80
+Total loss: 1.0630
+Component losses - Noise: 0.0492, Signal: 0.0069
+Gradient norm - Mean: 1.0542, Std: 0.6570
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 28/80
+Total loss: 1.0969
+Component losses - Noise: 0.0445, Signal: 0.0070
+Gradient norm - Mean: 0.9743, Std: 0.5295
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 29/80
+Total loss: 1.0580
+Component losses - Noise: 0.0418, Signal: 0.0071
+Gradient norm - Mean: 1.5145, Std: 0.9791
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 30/80
+Total loss: 1.1076
+Component losses - Noise: 0.0457, Signal: 0.0069
+Gradient norm - Mean: 1.5920, Std: 0.8415
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 31/80
+Total loss: 1.0810
+Component losses - Noise: 0.0466, Signal: 0.0069
+Gradient norm - Mean: 1.0569, Std: 0.6287
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 32/80
+Total loss: 1.1051
+Component losses - Noise: 0.0420, Signal: 0.0071
+Gradient norm - Mean: 2.2146, Std: 1.3088
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 33/80
+Total loss: 1.0841
+Component losses - Noise: 0.0510, Signal: 0.0070
+Gradient norm - Mean: 1.7852, Std: 1.2143
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 34/80
+Total loss: 1.0712
+Component losses - Noise: 0.0438, Signal: 0.0070
+Gradient norm - Mean: 0.8312, Std: 0.4012
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 35/80
+Total loss: 1.0840
+Component losses - Noise: 0.0426, Signal: 0.0070
+Gradient norm - Mean: 0.8859, Std: 0.3225
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 36/80
+Total loss: 1.0926
+Component losses - Noise: 0.0440, Signal: 0.0069
+Gradient norm - Mean: 0.8429, Std: 0.3925
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 37/80
+Total loss: 1.0818
+Component losses - Noise: 0.0425, Signal: 0.0068
+Gradient norm - Mean: 0.9460, Std: 0.5745
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 38/80
+Total loss: 1.0437
+Component losses - Noise: 0.0412, Signal: 0.0069
+Gradient norm - Mean: 1.2189, Std: 0.5355
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 39/80
+Total loss: 1.0310
+Component losses - Noise: 0.0413, Signal: 0.0069
+Gradient norm - Mean: 1.8326, Std: 0.8831
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 40/80
+Total loss: 1.1082
+Component losses - Noise: 0.0389, Signal: 0.0070
+Gradient norm - Mean: 1.4112, Std: 0.7341
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 41/80
+Total loss: 1.0715
+Component losses - Noise: 0.0433, Signal: 0.0068
+Gradient norm - Mean: 1.1880, Std: 0.5753
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 42/80
+Total loss: 1.0455
+Component losses - Noise: 0.0384, Signal: 0.0069
+Gradient norm - Mean: 1.5625, Std: 1.2036
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 43/80
+Total loss: 1.0748
+Component losses - Noise: 0.0396, Signal: 0.0069
+Gradient norm - Mean: 1.8448, Std: 0.9374
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 44/80
+Total loss: 1.0821
+Component losses - Noise: 0.0403, Signal: 0.0068
+Gradient norm - Mean: 1.7319, Std: 1.0047
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 45/80
+Total loss: 1.0503
+Component losses - Noise: 0.0432, Signal: 0.0067
+Gradient norm - Mean: 1.4073, Std: 0.9979
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 46/80
+Total loss: 1.0868
+Component losses - Noise: 0.0384, Signal: 0.0067
+Gradient norm - Mean: 1.6756, Std: 0.9921
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 47/80
+Total loss: 1.0534
+Component losses - Noise: 0.0375, Signal: 0.0064
+Gradient norm - Mean: 0.7270, Std: 0.3879
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 48/80
+Total loss: 1.0848
+Component losses - Noise: 0.0355, Signal: 0.0060
+Gradient norm - Mean: 1.7740, Std: 1.0555
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 49/80
+Total loss: 1.0643
+Component losses - Noise: 0.0442, Signal: 0.0059
+Gradient norm - Mean: 3.3829, Std: 1.3057
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 50/80
+Total loss: 1.0546
+Component losses - Noise: 0.0399, Signal: 0.0056
+Gradient norm - Mean: 1.2910, Std: 0.6272
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 51/80
+Total loss: 1.0759
+Component losses - Noise: 0.0374, Signal: 0.0057
+Gradient norm - Mean: 1.5397, Std: 0.6816
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 52/80
+Total loss: 1.0760
+Component losses - Noise: 0.0346, Signal: 0.0056
+Gradient norm - Mean: 1.1887, Std: 0.8276
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 53/80
+Total loss: 1.0733
+Component losses - Noise: 0.0398, Signal: 0.0056
+Gradient norm - Mean: 1.8712, Std: 0.9868
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 54/80
+Total loss: 1.0676
+Component losses - Noise: 0.0394, Signal: 0.0057
+Gradient norm - Mean: 1.8929, Std: 0.8257
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 55/80
+Total loss: 1.0748
+Component losses - Noise: 0.0366, Signal: 0.0056
+Gradient norm - Mean: 1.3893, Std: 0.9269
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 56/80
+Total loss: 1.0487
+Component losses - Noise: 0.0382, Signal: 0.0059
+Gradient norm - Mean: 3.3307, Std: 1.4478
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 57/80
+Total loss: 1.0312
+Component losses - Noise: 0.0377, Signal: 0.0055
+Gradient norm - Mean: 1.7110, Std: 0.9321
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 58/80
+Total loss: 1.0401
+Component losses - Noise: 0.0372, Signal: 0.0055
+Gradient norm - Mean: 2.0684, Std: 1.0792
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 59/80
+Total loss: 1.0718
+Component losses - Noise: 0.0347, Signal: 0.0055
+Gradient norm - Mean: 1.2446, Std: 0.8371
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 60/80
+Total loss: 1.0575
+Component losses - Noise: 0.0372, Signal: 0.0054
+Gradient norm - Mean: 1.5683, Std: 0.6734
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 61/80
+Total loss: 1.0477
+Component losses - Noise: 0.0377, Signal: 0.0055
+Gradient norm - Mean: 2.3970, Std: 1.0825
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 62/80
+Total loss: 1.0783
+Component losses - Noise: 0.0337, Signal: 0.0054
+Gradient norm - Mean: 0.9259, Std: 0.4502
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 63/80
+Total loss: 1.0523
+Component losses - Noise: 0.0367, Signal: 0.0053
+Gradient norm - Mean: 1.1018, Std: 0.6598
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 64/80
+Total loss: 1.0869
+Component losses - Noise: 0.0337, Signal: 0.0052
+Gradient norm - Mean: 1.1283, Std: 0.4909
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 65/80
+Total loss: 1.0660
+Component losses - Noise: 0.0350, Signal: 0.0052
+Gradient norm - Mean: 2.2087, Std: 1.4165
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 66/80
+Total loss: 1.0342
+Component losses - Noise: 0.0326, Signal: 0.0051
+Gradient norm - Mean: 3.2511, Std: 1.3698
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 67/80
+Total loss: 1.0552
+Component losses - Noise: 0.0323, Signal: 0.0046
+Gradient norm - Mean: 2.4493, Std: 1.3115
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 68/80
+Total loss: 1.1171
+Component losses - Noise: 0.0333, Signal: 0.0042
+Gradient norm - Mean: 3.4481, Std: 1.3000
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 69/80
+Total loss: 1.0647
+Component losses - Noise: 0.0304, Signal: 0.0039
+Gradient norm - Mean: 2.5055, Std: 1.3214
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 70/80
+Total loss: 1.0456
+Component losses - Noise: 0.0330, Signal: 0.0042
+Gradient norm - Mean: 3.8599, Std: 1.2297
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 71/80
+Total loss: 1.0785
+Component losses - Noise: 0.0310, Signal: 0.0039
+Gradient norm - Mean: 3.2462, Std: 1.3598
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 72/80
+Total loss: 1.0754
+Component losses - Noise: 0.0267, Signal: 0.0037
+Gradient norm - Mean: 2.7190, Std: 1.1756
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 73/80
+Total loss: 1.0228
+Component losses - Noise: 0.0264, Signal: 0.0035
+Gradient norm - Mean: 1.8406, Std: 0.9742
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 74/80
+Total loss: 1.0259
+Component losses - Noise: 0.0239, Signal: 0.0035
+Gradient norm - Mean: 1.8139, Std: 1.2371
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 75/80
+Total loss: 1.0353
+Component losses - Noise: 0.0238, Signal: 0.0034
+Gradient norm - Mean: 1.4739, Std: 1.0943
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 76/80
+Total loss: 1.0485
+Component losses - Noise: 0.0266, Signal: 0.0036
+Gradient norm - Mean: 3.7139, Std: 1.4354
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 77/80
+Total loss: 1.0351
+Component losses - Noise: 0.0248, Signal: 0.0034
+Gradient norm - Mean: 1.7674, Std: 1.0064
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 78/80
+Total loss: 1.0500
+Component losses - Noise: 0.0260, Signal: 0.0035
+Gradient norm - Mean: 3.0855, Std: 1.4713
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 79/80
+Total loss: 1.0112
+Component losses - Noise: 0.0247, Signal: 0.0035
+Gradient norm - Mean: 2.5427, Std: 1.2095
+Peak GPU memory allocated: 0.24 GB
+
+Epoch 80/80
+Total loss: 1.0197
+Component losses - Noise: 0.0230, Signal: 0.0035
+Gradient norm - Mean: 3.1371, Std: 1.2547
+Peak GPU memory allocated: 0.24 GB
+Evaluating model embeddings using Triplet Loss (hard negatives)...
+Detected classes: [0 1]
+
+Processing class 0...
+
+Processing class 1...
+
+Visualizing class 0...
+Saved plot for class 0 to hpc_results/
+
+Visualizing class 1...
+Saved plot for class 1 to hpc_results/
+
+Calculating FID between real and synthetic data...
+FID score: 337419.03

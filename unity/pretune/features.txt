@@ -1,0 +1,4 @@
+linear scheduler
+peak weight loss
+scaling
+contrastive loss
