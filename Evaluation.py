@@ -58,7 +58,7 @@ for ratio in ratios:
             synth_X.append(x_gen.detach().cpu().numpy())
             synth_y.append(c.item())
 
-    synth_X = np.array(synth_X)
+    synth_X = np.array(synth_X).squeeze()
     synth_y = np.array(synth_y)
 
     # Preprocess synthetic
