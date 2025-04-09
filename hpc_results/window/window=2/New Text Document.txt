@@ -1,5 +1,0 @@
-Timesteps: 300
-Base channels: 64
-Loss weights - Signal: 6, Peaks: 6
-Guidance scale: 1
-Peak mask weights: [1. 6.]
