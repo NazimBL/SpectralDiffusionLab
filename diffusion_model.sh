@@ -6,6 +6,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1       # Reduced to 1 task since we're GPU-focused
 #SBATCH --gres=gpu:1             # request GPUs on Unity
+#SBATCH --gres=gpu:a100:1
 #SBATCH --mem=8GB
 #SBATCH --partition=gpu           # Specify GPU partition
 #SBATCH --mail-type=FAIL
