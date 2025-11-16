@@ -1,0 +1,15 @@
+{
+  "recon_MSE_global": 8.352222380381136e-07,
+  "recon_MSE_band": 8.770794579504582e-07,
+  "align_MSE_global": 7.553834439022467e-05,
+  "align_cosine_global": 0.9911667108535767,
+  "cycle_preproc_MSE_global": 0.00010997445497196168,
+  "cycle_preproc_MSE_band": 9.966321522369981e-05,
+  "F": 235,
+  "downs": 4,
+  "latent_c": 64,
+  "peak_band": [
+    900.0,
+    1716.0
+  ]
+}
