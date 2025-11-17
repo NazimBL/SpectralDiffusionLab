@@ -1,19 +1,18 @@
 # SpectralDiffusionLab: Spectral Generation for Cancer Detection
 
-
-Generates synthetic FTIR spectra using conditioned diffusion models for endoscopic cancer research.
+Synthetic FTIR spectrum generation using class-aware diffusion models.
 
 ## Key Features
 - **Peak-Aware Diffusion**: Weighted loss for biological markers
 - **HPC-Ready**: Batch script templates for Slurm/PBS
-- **Medical Validation**: Built-in spectral verification tools
-- **Multi-Class**: Handles both healthy/cancerous spectra
+- **Medical Validation**: spectral verification and qc evaluation
+- **Multi-Class**: generates both healthy/cancerous spectra
 
 # SpectralDiffusionLab
 
-Latent diffusion models for **FTIR-based endometrial cancer detection**.
+Latent diffusion models for **FTIR-based cancer detection**.
 
-This repository implements a **latent-space conditional diffusion model** on top of a 1D convolutional autoencoder. The model generates realistic FTIR spectra for Healthy vs Cancer patients and studies how synthetic data affects downstream classification (XGBoost) performance.
+This repository implements a **latent-space conditional diffusion model**. The model generates realistic FTIR spectra for Healthy vs Cancer patients and studies how synthetic data affects downstream classification performance.
 
 ---
 
@@ -32,13 +31,13 @@ This repository implements a **latent-space conditional diffusion model** on top
 ├─ ldm_out/                    # autoencoder & DDPM weights, logs, generated spectra
 ├─ legacy/                     # older raw-space diffusion code and experiments
 ├─ MyDataset/                  # processed train/test CSVs used by the models
-├─ venv/                       # local virtual environment (ignored in git)
+├─ venv/                       # local virtual environment 
 │
-├─ balance_compare.py          # compare balancing strategies (XGBoost)
+├─ balance_compare.py          # compare balancing strategies
 ├─ ddpm_sample_generate.py     # generate new Healthy/Cancer spectra
 ├─ Latent_ddpm_z.py            # cache AE latent codes for train/val
 ├─ QC.py                       # QC plots: generated vs real spectra
-├─ strategic_augmentation.py   # balance-then-augment experiment (XGBoost)
+├─ strategic_augmentation.py   # balance-then-augment experiment 
 ├─ train_ae.py                 # train Conv1D autoencoder on FTIR spectra
 ├─ train_ddpm_latent.py        # train latent-space conditional DDPM
 └─ requirements.txt
