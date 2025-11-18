@@ -8,9 +8,6 @@ Synthetic FTIR spectrum generation using a conditional diffusion model.
 - **Medical Validation**: spectral verification and qc evaluation
 - **Multi-Class**: generates both healthy/cancerous spectra
 
-# SpectralDiffusionLab
-
-Latent diffusion models for **FTIR-based cancer detection**.
 
 This repository implements a **latent-space conditional diffusion model**. The model generates realistic FTIR spectra for Healthy vs Cancer patients and studies how synthetic data affects downstream classification performance.
 
