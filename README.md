@@ -1,6 +1,6 @@
-# SpectralDiffusionLab: Spectral Generation for Cancer Detection
+# SpectralDiffusionLab: 
 
-Synthetic FTIR spectrum generation using class-aware diffusion models.
+Synthetic FTIR spectrum generation using a conditional diffusion model.
 
 ## Key Features
 - **Peak-Aware Diffusion**: Weighted loss for biological markers
