@@ -1,6 +1,6 @@
-# SpectralDiffusionLab: 
+# SpectralDiffusionLab
 
-Synthetic FTIR spectrum generation using a conditional diffusion model.
+Synthetic FTIR spectrum generation using a conditional diffusion model. Paper pending submission so you'll have to wait for more details;
 
 ## Key Features
 - **Peak-Aware Diffusion**: Weighted loss for biological markers
