@@ -2,13 +2,6 @@
 
 Synthetic FTIR spectrum generation using a conditional diffusion model. Paper pending submission so you'll have to wait for more details;
 
-## Key Features
-- **Peak-Aware Diffusion**: Weighted loss for biological markers
-- **HPC-Ready**: Batch script templates for Slurm/PBS
-- **Medical Validation**: spectral verification and qc evaluation
-- **Multi-Class**: generates both healthy/cancerous spectra
-
-
 This repository implements a **latent-space conditional diffusion model**. The model generates realistic FTIR spectra for Healthy vs Cancer patients and studies how synthetic data affects downstream classification performance.
 
 ---
