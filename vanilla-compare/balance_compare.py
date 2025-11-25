@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 
 """
-This script tests a "Clean Spectrum" + "Balance-then-Augment" strategy
-using an XGBoost classifier.
+This script runs a focused experiment to compare three balancing strategies:
+1.  Orig_Imbalanced: Real, imbalanced data (168H, 241C)
+2.  Real_Balanced_Undersample: Real, undersampled data (168H, 168C)
+3.  Synthetic_Balanced: Real data + synthetic balancing data (241H, 241C)
 
-1.  Real Data is preprocessed: Raw -> 2nd-Derivative -> Clean Spectra
-2.  Synthetic Data is generated: DDPM -> Decode -> Clean Spectra
-3.  The classifier is trained purely on these (N, 235) clean spectra.
+This will isolate the effect of balancing from augmentation.
 """
 
 import math, json, random
@@ -26,17 +26,15 @@ import warnings
 # ==================================
 # ======== MAIN CONFIG ========
 # ==================================
-AUGMENT_RATIOS = [0.0, 0.2,0.4, 0.6,0.8, 1,1.5, 2.0]
 TRAIN_CSV = Path(r"MyDataset/ftir_train_wn.csv")
 TEST_CSV = Path(r"MyDataset/ftir_test_wn.csv")
 LDM_DIR = Path("ldm_out")
 AE_WEIGHTS_FILE = LDM_DIR / "ae_conv1d.pt"
 DDPM_CHECKPOINT_FILE = LDM_DIR / "ddpm_latent_unet.pt"
 AE_META_FILE = LDM_DIR / "ae_meta.json"
-OUT_DIR = Path(r"Augmentation_Results_XGBoost")
+OUT_DIR = Path(r"Balancing_Experiment_Results")
 SAMPLE_STEPS = 1000
 SEED = 42
-GENERATOR_BATCH_SIZE = 64  # Batch size for generating new samples
 GUIDANCE_SCALE = 0.5
 LATENT_C_MODEL = 12  # Must match train_ae.py
 # ==================================
@@ -49,6 +47,7 @@ print(f"Using device: {DEVICE}")
 random.seed(SEED);
 np.random.seed(SEED);
 torch.manual_seed(SEED)
+RNG = np.random.default_rng(SEED)
 
 
 # =================================================================
@@ -78,12 +77,11 @@ def spectral_cols(df):
 
 
 # =================================================================
-# PART 2: GENERATIVE MODEL DEFINITIONS
-# matches other script ... to be organized later sorry
+# PART 2: Generative model definitions
 # =================================================================
 
 def gnorm(c):
-    return nn.GroupNorm(num_groups=min(8, c), num_channels=c)
+    return nn.GroupNorm(num_groups=min(4, c), num_channels=c)  # 4 groups for 12 channels
 
 
 class ConvAE(nn.Module):
@@ -249,9 +247,9 @@ def generate_clean_spectra(unet, ae, z_mu, z_std, z_tr_std, T_trained, steps, y_
     sqrt_recip_alphas = (1.0 / torch.sqrt(alphas_s)).to(DEVICE)
 
     latent_c = unet.rb1.conv1.in_channels
-    latent_L = ae.latent_L  # Get L from the AE
+    latent_L = ae.latent_L
 
-    # Scale the initial noise
+    # *** FINAL FIX: Scale the initial noise ***
     z_t = torch.randn(n, latent_c, latent_L, device=DEVICE) * z_tr_std
 
     y_cond = torch.full((n,), int(y_class), device=DEVICE, dtype=torch.long)
@@ -274,11 +272,7 @@ def generate_clean_spectra(unet, ae, z_mu, z_std, z_tr_std, T_trained, steps, y_
             z_t = mean
 
     z_final_norm = z_t
-
-    # Un-normalize the latent
     z_t_unnorm = z_final_norm * z_std + z_mu
-
-    # Decode the un-normalized latent to a clean spectrum
     x_clean = ae.decode(z_t_unnorm)
 
     return x_clean.squeeze(1).detach().cpu().numpy()  # (n, F)
@@ -290,9 +284,11 @@ def generate_clean_spectra(unet, ae, z_mu, z_std, z_tr_std, T_trained, steps, y_
 
 def run_classifier_analysis(X_tr: np.ndarray, y_tr: np.ndarray,
                             X_te: np.ndarray, y_te: np.ndarray,
-                            strategy_name: str, n_syn_h: int, n_syn_c: int):
+                            strategy_name: str, n_train_h: int, n_train_c: int):
+    """
+    Trains and evaluates a robust XGBoost classifier.
+    """
     n_total_train = X_tr.shape[0]
-    n_syn_total = n_syn_h + n_syn_c
 
     print(f"  Training XGBClassifier (N={n_total_train}, F={X_tr.shape[1]})...")
 
@@ -327,9 +323,8 @@ def run_classifier_analysis(X_tr: np.ndarray, y_tr: np.ndarray,
 
     return {
         "strategy": strategy_name,
-        "n_total_train": n_total_train,
-        "n_syn_healthy": n_syn_h,
-        "n_syn_cancer": n_syn_c,
+        "n_train_h": n_train_h,
+        "n_train_c": n_train_c,
         "features": X_tr.shape[1],
         "test_auc": auc,
         "test_acc": acc,
@@ -339,17 +334,13 @@ def run_classifier_analysis(X_tr: np.ndarray, y_tr: np.ndarray,
 
 
 # =================================================================
-# PART 5: MAIN EXPERIMENT SCRIPT
+# PART 5: MAIN EXPERIMENT
 # =================================================================
 
 def main():
-    print("Starting 'Clean Spectrum' + 'Balance-then-Augment' experiment (with XGBoost)...")
+    print("Starting Balancing Strategies Comparison (XGBoost)...")
 
     # --- 1. Original Data ---
-    if not (TRAIN_CSV.exists() and TEST_CSV.exists() and AE_META_FILE.exists()):
-        print("Error: Missing one or more input files.")
-        return
-
     df_tr_orig = pd.read_csv(TRAIN_CSV)
     df_te = pd.read_csv(TEST_CSV)
 
@@ -364,12 +355,11 @@ def main():
     X_te_raw = df_te[spec_cols].to_numpy(dtype=np.float32)
     y_te = (df_te["classes"].values != 0).astype(int)
 
-    n_orig_healthy = np.sum(y_tr_orig == 0)
-    n_orig_cancer = np.sum(y_tr_orig == 1)
-    n_to_balance = n_orig_cancer - n_orig_healthy
+    n_orig_healthy = np.sum(y_tr_orig == 0)  # 168
+    n_orig_cancer = np.sum(y_tr_orig == 1)  # 241
+    n_to_balance = n_orig_cancer - n_orig_healthy  # 73
     print(
         f"Loaded original train data: {n_orig_healthy} Healthy, {n_orig_cancer} Cancer. (Imbalance: {n_to_balance} samples)")
-    print(f"Loaded original test data: {np.sum(y_te == 0)} Healthy, {np.sum(y_te == 1)} Cancer. Total: {len(y_te)}")
 
     # --- 2. Load Generative Models & configs ---
     print("Loading generative models...")
@@ -383,8 +373,6 @@ def main():
         return
 
     T_trained = int(ckpt["T"])
-
-    # Latent Stats
     z_mu = ckpt["z_mu"].to(DEVICE)
     z_std = ckpt["z_std"].to(DEVICE)
 
@@ -413,27 +401,58 @@ def main():
     print("Preprocessing all data to 2nd-Derivative domain...")
     X_tr_orig_clean = np.vstack([preprocess_row(r) for r in X_tr_orig_raw]).astype(np.float32)
     X_te_clean = np.vstack([preprocess_row(r) for r in X_te_raw]).astype(np.float32)
-    print(f"Train data preprocessed to shape: {X_tr_orig_clean.shape}")
-    print(f"Test data preprocessed to shape: {X_te_clean.shape}")
 
     all_results = []
 
-    # --- 4. Run ORIGINAL Imbalanced Baseline ---
+    # --- STRATEGY 2: Original Imbalanced (168 H, 241 C) ---
     print("\n" + "=" * 50)
-    print("RUNNING EXPERIMENT: Strategy 'Original_Imbalanced'")
+    print("RUNNING EXPERIMENT: Strategy 'Orig_Imbalanced'")
     print("=" * 50)
     results = run_classifier_analysis(
         X_tr_orig_clean, y_tr_orig,
         X_te_clean, y_te,
-        "Orig_Imbalanced", 0, 0
+        "Orig_Imbalanced", n_orig_healthy, n_orig_cancer
     )
     all_results.append(results)
 
-    # --- 5. Create the new "Base Balanced Set" ---
+    # --- STRATEGY 1: Real_Balanced_Undersample (168 H, 168 C) ---
     print("\n" + "=" * 50)
-    print("Creating Base Balanced Dataset")
+    print("RUNNING EXPERIMENT: Strategy 'Real_Balanced_Undersample'")
     print("=" * 50)
-    print(f"  Generating {n_to_balance} 'Healthy' clean spectra...")
+
+    # Get all healthy samples
+    X_h_real = X_tr_orig_clean[y_tr_orig == 0]
+    y_h_real = y_tr_orig[y_tr_orig == 0]
+
+    # Get all cancer samples
+    X_c_real = X_tr_orig_clean[y_tr_orig == 1]
+    y_c_real = y_tr_orig[y_tr_orig == 1]
+
+    # Randomly select 168 cancer samples
+    n_healthy = len(y_h_real)
+    cancer_indices = RNG.choice(len(y_c_real), size=n_healthy, replace=False)
+
+    X_c_real_under = X_c_real[cancer_indices]
+    y_c_real_under = y_c_real[cancer_indices]
+
+    # Combine them
+    X_tr_under = np.vstack([X_h_real, X_c_real_under])
+    y_tr_under = np.hstack([y_h_real, y_c_real_under])
+
+    print(f"  Created undersampled dataset: {len(y_h_real)} H, {len(y_c_real_under)} C")
+
+    results = run_classifier_analysis(
+        X_tr_under, y_tr_under,
+        X_te_clean, y_te,
+        "Real_Balanced_Undersample", len(y_h_real), len(y_c_real_under)
+    )
+    all_results.append(results)
+
+    # --- STRATEGY 3: Synthetic_Balanced (241 H, 241 C) ---
+    print("\n" + "=" * 50)
+    print("RUNNING EXPERIMENT: Strategy 'Synthetic_Balanced (Balanced + 0%)'")
+    print("=" * 50)
+    print(f"  Generating {n_to_balance} 'Healthy' clean spectra to balance data...")
 
     X_gen_balance_h = generate_clean_spectra(
         unet=unet, ae=ae, z_mu=z_mu, z_std=z_std, z_tr_std=z_tr_norm_std,
@@ -442,132 +461,72 @@ def main():
     )
     y_gen_balance_h = np.zeros(n_to_balance, dtype=int)
 
-    # This is our new "base" training set of preprocessed spectra
-    X_tr_base_clean = np.vstack([X_tr_orig_clean, X_gen_balance_h])
-    y_tr_base = np.hstack([y_tr_orig, y_gen_balance_h])
+    # This is the "base" training set of preprocessed spectra
+    X_tr_syn_balanced = np.vstack([X_tr_orig_clean, X_gen_balance_h])
+    y_tr_syn_balanced = np.hstack([y_tr_orig, y_gen_balance_h])
 
-    n_base_size = len(y_tr_base)
-    n_base_healthy = np.sum(y_tr_base == 0)
-    n_base_cancer = np.sum(y_tr_base == 1)
+    n_h_total = np.sum(y_tr_syn_balanced == 0)  # Should be 241
+    n_c_total = np.sum(y_tr_syn_balanced == 1)  # Should be 241
+    print(f"  New synthetically balanced set: {n_h_total} H, {n_c_total} C")
 
-    print(f"  New base training set: {n_base_healthy} H, {n_base_cancer} C (Total: {n_base_size})")
-
-    # --- 6. Run Experiment Loop (starting from balanced set) ---
-    for ratio in AUGMENT_RATIOS:
-        strategy_name = f"Balanced + {ratio * 100:.0f}%"
-        print("\n" + "=" * 50)
-        print(f"RUNNING EXPERIMENT: Strategy '{strategy_name}'")
-        print("=" * 50)
-
-        if ratio == 0.0:
-            X_tr_aug_clean = X_tr_base_clean
-            y_tr_aug = y_tr_base
-            n_syn_h, n_syn_c = n_to_balance, 0
-            print(f"  Using 0% additional data (Balanced Baseline).")
-        else:
-            n_base_class_size = n_base_cancer
-            n_syn_per_class = int(n_base_class_size * ratio)
-
-            # Batch generation to avoid OOM
-            X_gen_healthy, X_gen_cancer = [], []
-            n_left_h = n_syn_per_class
-            n_left_c = n_syn_per_class
-
-            print(f"  Generating {n_syn_per_class} new healthy and {n_syn_per_class} new cancer spectra...")
-            while n_left_h > 0 or n_left_c > 0:
-                if n_left_h > 0:
-                    n_batch_h = min(n_left_h, GENERATOR_BATCH_SIZE)
-                    X_batch_h = generate_clean_spectra(
-                        unet=unet, ae=ae, z_mu=z_mu, z_std=z_std, z_tr_std=z_tr_norm_std,
-                        T_trained=T_trained, steps=min(SAMPLE_STEPS, T_trained),
-                        y_class=0, n=n_batch_h, w=GUIDANCE_SCALE
-                    )
-                    X_gen_healthy.append(X_batch_h)
-                    n_left_h -= n_batch_h
-
-                if n_left_c > 0:
-                    n_batch_c = min(n_left_c, GENERATOR_BATCH_SIZE)
-                    X_batch_c = generate_clean_spectra(
-                        unet=unet, ae=ae, z_mu=z_mu, z_std=z_std, z_tr_std=z_tr_norm_std,
-                        T_trained=T_trained, steps=min(SAMPLE_STEPS, T_trained),
-                        y_class=1, n=n_batch_c, w=GUIDANCE_SCALE
-                    )
-                    X_gen_cancer.append(X_batch_c)
-                    n_left_c -= n_batch_c
-
-            X_gen_healthy_all = np.vstack(X_gen_healthy)
-            X_gen_cancer_all = np.vstack(X_gen_cancer)
-            y_gen_healthy = np.zeros(n_syn_per_class, dtype=int)
-            y_gen_cancer = np.ones(n_syn_per_class, dtype=int)
-
-            X_tr_aug_clean = np.vstack([X_tr_base_clean, X_gen_healthy_all, X_gen_cancer_all])
-            y_tr_aug = np.hstack([y_tr_base, y_gen_healthy, y_gen_cancer])
-
-            n_syn_h = n_to_balance + n_syn_per_class
-            n_syn_c = n_syn_per_class
-
-        n_h_total = np.sum(y_tr_aug == 0)
-        n_c_total = np.sum(y_tr_aug == 1)
-        print(f"  New training set: {n_h_total} H, {n_c_total} C (Total: {len(y_tr_aug)})")
-        print(f"  Training data shape: {X_tr_aug_clean.shape}")
-
-        results = run_classifier_analysis(
-            X_tr_aug_clean, y_tr_aug,
-            X_te_clean, y_te,
-            strategy_name, n_syn_h, n_syn_c
-        )
-        all_results.append(results)
+    results = run_classifier_analysis(
+        X_tr_syn_balanced, y_tr_syn_balanced,
+        X_te_clean, y_te,
+        "Synthetic_Balanced", n_h_total, n_c_total
+    )
+    all_results.append(results)
 
     # --- 7. Final Report ---
     print("\n" + "=" * 60)
-    print("     CLEAN SPECTRUM 'BALANCE-THEN-AUGMENT' EXPERIMENT (XGBOOST)")
+    print("     BALANCING STRATEGY COMPARISON (XGBOOST)")
     print("=" * 60)
 
     df_results = pd.DataFrame(all_results)
     df_results.set_index("strategy", inplace=True)
 
-    results_csv_path = OUT_DIR / "augmentation_results_clean_spectrum_xgboost.csv"
+    results_csv_path = OUT_DIR / "balancing_strategy_comparison.csv"
     df_results.to_csv(results_csv_path)
     print(f"Saved results table to: {results_csv_path}")
 
-    print("\nTest Set Performance vs. Augmentation Strategy (Clean Spectrum, XGBoost):")
-    print(df_results[['n_total_train', 'n_syn_healthy', 'n_syn_cancer', 'features', 'test_auc', 'test_acc', 'test_sens',
+    print("\nTest Set Performance vs. Balancing Strategy:")
+    print(df_results[['n_train_h', 'n_train_c', 'features', 'test_auc', 'test_acc', 'test_sens',
                       'test_spec']].to_string(float_format="%.4f"))
 
     # --- Plots ---
     fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(14, 10))
-    fig.suptitle("XGBClassifier Test Performance: Balance-then-Augment Strategy (Clean Spectrum)", fontsize=16)
+    fig.suptitle("XGBClassifier Test Performance: Balancing Strategy Comparison", fontsize=16)
 
     strategies_str = df_results.index.values
 
-    axes[0, 0].plot(strategies_str, df_results['test_auc'], 'o-', label="Test AUC")
+    axes[0, 0].bar(strategies_str, df_results['test_auc'], color='tab:blue')
     axes[0, 0].set_title("Test AUC")
-    axes[0, 0].grid(True, linestyle='--')
+    axes[0, 0].grid(True, linestyle='--', axis='y')
 
-    axes[0, 1].plot(strategies_str, df_results['test_acc'], 'o-', label="Test Accuracy", color='tab:green')
+    axes[0, 1].bar(strategies_str, df_results['test_acc'], color='tab:green')
     axes[0, 1].set_title("Test Accuracy")
-    axes[0, 1].grid(True, linestyle='--')
+    axes[0, 1].grid(True, linestyle='--', axis='y')
 
-    axes[1, 0].plot(strategies_str, df_results['test_sens'], 'o-', label="Test Sensitivity (Cancer)", color='tab:red')
-    axes[1, 0].set_title("Test Sensitivity")
-    axes[1, 0].set_xlabel("Augmentation Strategy")
-    axes[1, 0].grid(True, linestyle='--')
+    axes[1, 0].bar(strategies_str, df_results['test_sens'], color='tab:red')
+    axes[1, 0].set_title("Test Sensitivity (Cancer)")
+    axes[1, 0].set_xlabel("Strategy")
+    axes[1, 0].grid(True, linestyle='--', axis='y')
 
-    axes[1, 1].plot(strategies_str, df_results['test_spec'], 'o-', label="Test Specificity (Healthy)", color='tab:blue')
-    axes[1, 1].set_title("Test Specificity")
-    axes[1, 1].set_xlabel("Augmentation Strategy")
-    axes[1, 1].grid(True, linestyle='--')
+    axes[1, 1].bar(strategies_str, df_results['test_spec'], color='tab:purple')
+    axes[1, 1].set_title("Test Specificity (Healthy)")
+    axes[1, 1].set_xlabel("Strategy")
+    axes[1, 1].grid(True, linestyle='--', axis='y')
 
     min_y = max(0.0, df_results[['test_auc', 'test_acc', 'test_sens', 'test_spec']].min().min() - 0.1)
     max_y = min(1.0, df_results[['test_auc', 'test_acc', 'test_sens', 'test_spec']].max().max() + 0.05)
 
     for ax in axes.flat:
-        ax.set_ylim(bottom=min_y, top=max_y)
-        ax.tick_params(axis='x', rotation=25)
+        if min_y < max_y:
+            ax.set_ylim(bottom=min_y, top=max_y)
+        ax.tick_params(axis='x', rotation=15)
 
     plt.tight_layout(rect=[0, 0.03, 1, 0.95])
 
-    plot_path = OUT_DIR / "augmentation_metrics_plot_clean_spectrum_xgboost.png"
+    plot_path = OUT_DIR / "balancing_strategy_comparison.png"
     plt.savefig(plot_path, dpi=200)
     print(f"\nSaved metrics plot to: {plot_path}")
     plt.show()
