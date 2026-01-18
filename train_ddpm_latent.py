@@ -226,7 +226,6 @@ def predict_x0_from_eps(z_t, t, eps_hat):
     return s1 * (z_t - s2 * eps_hat)
 
 
-# --- Peak loss helpers are no longer used for v1 ---
 
 # --- Data Loading (This is correct) ---
 tr = torch.load(OUT_DIR / "latent_train.pt", map_location=DEVICE, weights_only=False)

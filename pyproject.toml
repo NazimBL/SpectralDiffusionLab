@@ -1,0 +1,16 @@
+[project]
+name = "endocancerftir-cdm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "imblearn>=0.0",
+    "matplotlib>=3.9.4",
+    "numpy>=2.0.2",
+    "pandas>=2.3.3",
+    "scikit-learn>=1.6.1",
+    "scipy>=1.13.1",
+    "torch>=2.8.0",
+    "xgboost>=2.1.4",
+]
