@@ -2,12 +2,16 @@
 
 **A Latent Diffusion Framework for Generative Augmentation of FTIR Spectroscopy**
 
+<<<<<<< HEAD
 ## Abstract
 This repository contains the official implementation of the paper *"A Latent Diffusion Framework for Generative Augmentation of FTIR Spectroscopy"* (submitted to IJCAI 2026, AI and Health Track). The project implements a **latent-space conditional Denoising Diffusion Probabilistic Model (DDPM)** designed to generate realistic Fourier Transform Infrared (FTIR) spectra for distinguishing between Healthy and Cancerous tissue samples. 
 
 We provide this codebase to ensure the **reproducibility** of our results. It includes the complete training pipeline, evaluation metrics, and quality control (QC) scripts.
 
 ## Reproducibility & Installation
+=======
+This repository implements a **latent-space conditional diffusion model**. The model generates realistic FTIR spectra for Healthy vs Cancer patients and studies how synthetic data affects downstream classification performance.
+>>>>>>> b45ecf39fd1bfff20530baede3311bab557e5ffb
 
 This project uses **[uv](https://github.com/astral-sh/uv)** for fast and reliable dependency management. Reproducibility is guaranteed when installing dependencies via `uv sync`.
 
